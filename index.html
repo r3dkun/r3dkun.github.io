@@ -2,8 +2,29 @@
 <html>
 <head>
     <title>r3d's Library</title>
-    <link rel="stylesheet" href="styles.css"> </head>
+    <link rel="dark-mode" href="dark-mode.css">
+</head>
 <body>
+        <style>
+            @media (prefers-color-scheme: dark) {
+    /* Include the styles from your dark-mode.css file here */
+    @import url("dark-mode.css");
+}
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+    </style>
     <main>
         <section id="home">
             <h2>WELCOME TO MY LIBRARY</h2>
@@ -51,20 +72,3 @@
         <p>&copy; r3d's Library</p>
     </footer>
 </body>
-function toggleDarkMode() {
-    const body = document.body;
-    const darkModeClass = "dark-mode";
-
-    if (body.classList.contains(darkModeClass)) {
-        body.classList.remove(darkModeClass);
-        localStorage.setItem("dark-mode", "false");
-    } else {
-        body.classList.add(darkModeClass);
-        localStorage.setItem("dark-mode", "true");
-    }
-}
-
-// Check if dark mode is enabled on page load
-if (localStorage.getItem("dark-mode") === "true") {
-    toggleDarkMode();
-}
